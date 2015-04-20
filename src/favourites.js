@@ -308,6 +308,12 @@ var async = require('async'),
 					posts.setPostField(pid, 'reputation', count, next);
 				},
 				function(next) {
+					var hook = isFavouriting ? 'favourite' : 'unfavourite';
+					plugins.fireHook('action:post.' + hook, {
+						pid: pid,
+						uid: uid,
+						isFavourited: isFavouriting
+					});
 					next(null, {
 						post: results.postData,
 						isFavourited: isFavouriting
