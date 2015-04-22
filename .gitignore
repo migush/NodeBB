@@ -10,7 +10,6 @@ public/css/*.css
 .project
 .idea
 *.swp
-Vagrantfile
 .vagrant
 provision.sh
 *.komodoproject
